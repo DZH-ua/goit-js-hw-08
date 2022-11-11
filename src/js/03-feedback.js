@@ -16,8 +16,8 @@ function onFormInput(event) {
   const formData = new FormData(form);
   formData.forEach((value, name) => {
     feedback[name] = value;
-    console.log(feedback);
   });
+  console.log(feedback);
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(feedback));
 }
 
