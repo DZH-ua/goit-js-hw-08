@@ -23,12 +23,18 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+  const {
+    elements: { email, message },
+  } = event.currentTarget;
+  if (email.value && message.value !== '') {
+    console.log('очистили хранилище');
+    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
 
-  console.log('очистили хранилище');
-  console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
-
-  event.currentTarget.reset();
-  localStorage.removeItem(LOCALSTORAGE_KEY);
+    event.currentTarget.reset();
+    localStorage.removeItem(LOCALSTORAGE_KEY);
+  } else {
+    alert('Все поля должны быть заполнены!');
+  }
 }
 
 function onFormLabelCheck() {
