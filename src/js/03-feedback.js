@@ -41,7 +41,7 @@ function onFormLabelCheck() {
   const savedFormInfo = localStorage.getItem(LOCALSTORAGE_KEY);
   const parsedFormInfo = JSON.parse(savedFormInfo);
 
-  if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+  if (savedFormInfo) {
     console.log('не пусто');
     form.elements.message.value = parsedFormInfo.message;
     form.elements.email.value = parsedFormInfo.email;
